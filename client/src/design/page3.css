@@ -1,0 +1,128 @@
+/* Section Wrapper */
+.section {
+  padding: 4rem 1rem;
+  background-color: var(--secondary-bg);
+}
+
+/* Technology Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.tech-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tech-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.tech-header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* Card Layout */
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Text */
+.card-text {
+  flex: 1 1 60%;
+}
+
+.card-text h3 {
+  font-size: 1.8rem;
+  color: var(--vernovate-gold);
+  margin-bottom: 1rem;
+}
+
+.card-text p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.card-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card-text ul li::before {
+  content: "✔";
+  color: var(--vernovate-gold);
+  margin-right: 0.5rem;
+}
+
+.card-text ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Card Icon */
+.card-icon {
+  flex: 1 1 30%;
+  text-align: center;
+}
+
+.card-icon img {
+  width: 80px;
+  height: auto;
+}
+
+/* Camera Icon Specific */
+.camera-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.camera-icon-container img {
+  position: relative;
+  z-index: 2;
+}
+
+.camera-icon-container .white-circle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-text,
+  .card-icon {
+    flex: 1 1 100%;
+  }
+}
