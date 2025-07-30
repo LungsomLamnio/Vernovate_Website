@@ -1,12 +1,12 @@
 import React from "react";
+import Page1 from "./design/Page1";
 import Page3 from "./design/Page3";
 import Page8 from "./design/Page8";
-import Page1 from "./design/Page1";
 import AppNavbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container py-4"> {/* Bootstrap layout */}
       <AppNavbar />
       <Page1 />
       <Page3 />
