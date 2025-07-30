@@ -2,10 +2,14 @@
 .section {
   padding: 4rem 1rem;
   background-color: var(--secondary-bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 /* Technology Container */
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -14,19 +18,37 @@
 /* Header */
 .tech-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .tech-header h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.underline-animation {
+  height: 4px;
+  width: 0;
+  background: #ffa500;
+  margin: 0 auto 1.5rem;
+  animation: underlineGrow 1.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes underlineGrow {
+  from { width: 0; }
+  to { width: 100px; }
 }
 
 .tech-header p {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
+  font-size: 1.4rem;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Card Layout */
@@ -37,59 +59,87 @@
   align-items: center;
   gap: 2rem;
   background-color: var(--card-bg);
-  padding: 2rem;
+  padding: 3rem 2rem;
   border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   margin-bottom: 2rem;
-  transition: var(--transition);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 350px;
 }
 
+/* Hover effect */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Card Text */
 .card-text {
-  flex: 1 1 60%;
+  flex: 1 1 50%;
+  min-width: 300px;
 }
 
 .card-text h3 {
-  font-size: 1.8rem;
-  color: var(--vernovate-gold);
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 .card-text p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #6c757d;
+  line-height: 1.7;
 }
 
 .card-text ul {
   list-style: none;
   padding-left: 0;
-}
-
-.card-text ul li::before {
-  content: "✔";
-  color: var(--vernovate-gold);
-  margin-right: 0.5rem;
+  margin-top: 2rem;
 }
 
 .card-text ul li {
-  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 2.2rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.25rem;
+  color: #2c3e50;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.card-text ul li::before {
+  content: "\2713"; /* Unicode checkmark character */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FFB000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Arial", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  text-shadow: none;
+  -webkit-text-fill-color: #FFB000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FFB000;
 }
 
 /* Card Icon */
 .card-icon {
   flex: 1 1 30%;
   text-align: center;
+  min-width: 200px;
 }
 
 .card-icon img {
-  width: 80px;
+  width: 120px;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon img {
+  transform: scale(1.1);
 }
 
 /* Camera Icon Specific */
@@ -107,8 +157,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: white;
   border-radius: 50%;
   z-index: 1;
@@ -119,10 +169,19 @@
   .card {
     flex-direction: column;
     text-align: center;
+    padding: 2rem;
+    gap: 2rem;
   }
 
-  .card-text,
-  .card-icon {
-    flex: 1 1 100%;
+  .tech-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .tech-header p {
+    font-size: 1.1rem;
+  }
+
+  .card-text h3 {
+    font-size: 1.8rem;
   }
 }

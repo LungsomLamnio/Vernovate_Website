@@ -1,15 +1,18 @@
-// Page3.jsx
+// client/src/design/Page3.jsx
+
 import React from 'react';
 import './page3.css';
 
-function Page3() {
+const Page3 = () => {
   return (
     <section id="technology" className="section tech-section">
+      <div className="container">
         <div className="tech-header">
           <h2 className="section-title">Technology</h2>
           <p>Integrating AI, Computer Vision, and Real-time Data</p>
         </div>
 
+        {/* Only Computer Vision Card */}
         <div className="card">
           <div className="card-text">
             <h3>Computer Vision</h3>
@@ -27,38 +30,9 @@ function Page3() {
             </div>
           </div>
         </div>
-
-        <div className="card">
-          <div className="card-text">
-            <h3>AI & Machine Learning</h3>
-            <p>Smart algorithms that learn and adapt to optimize traffic flow and safety.</p>
-            <ul>
-              <li>Dynamic signal optimization</li>
-              <li>Emergency vehicle priority</li>
-              <li>Smart traffic prediction</li>
-            </ul>
-          </div>
-          <div className="card-icon">
-            <img src="https://img.icons8.com/fluency/96/FFB000/brain.png" alt="AI Icon" />
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-text">
-            <h3>Real-time Analytics</h3>
-            <p>Instant data processing and visualization for informed decision-making.</p>
-            <ul>
-              <li>Live traffic monitoring</li>
-              <li>Incident detection</li>
-              <li>Performance analytics</li>
-            </ul>
-          </div>
-          <div className="card-icon">
-            <img src="https://img.icons8.com/fluency/96/FFB000/analytics.png" alt="Analytics Icon" />
-          </div>
-        </div>
+      </div>
     </section>
   );
-}
+};
 
 export default Page3;
