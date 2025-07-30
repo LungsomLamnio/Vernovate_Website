@@ -1,10 +1,12 @@
 import React from "react";
-import Page2 from "./design/Page2";
+import Page3 from "./design/Page3";
 
 function App() {
   return (
-    <div className="App">
-      <Page2 />
+    <div className="container py-4">
+      {" "}
+      {/* Bootstrap layout */}
+      <Page3 />
     </div>
   );
 }
