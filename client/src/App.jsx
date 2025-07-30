@@ -1,12 +1,10 @@
-import React from 'react';
-import Page3 from './design/Page3'
+import React from "react";
+import Page2 from "./design/Page2";
 
 function App() {
-
-  
   return (
     <div className="App">
-      <Page3 />
+      <Page2 />
     </div>
   );
 }
