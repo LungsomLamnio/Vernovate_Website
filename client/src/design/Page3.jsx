@@ -9,7 +9,7 @@ const Page3 = () => {
       <div className="container">
         <div className="tech-header">
           <h2 className="section-title">Technology</h2>
-          <p>Integrating AI, Computer Vision, and Real-time Data</p>
+          <p>Cutting-edge AI solutions at your fingerprints</p>
         </div>
 
         {/* Only Computer Vision Card */}
