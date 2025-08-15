@@ -4,7 +4,7 @@ import "./Page9.css";
 
 const Page9 = () => {
   return (
-    <div className="section">
+    <div className="section" id="about"> {/* <-- Added id here */}
       <div className="container">
         <div className="heading-wrapper text-center">
           <h2 className="heading">
