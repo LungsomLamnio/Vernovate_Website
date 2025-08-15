@@ -2,144 +2,191 @@ import React from "react";
 
 const BlogSection = () => {
   const styles = {
-    blogSection: {
-      width: "100%",
+    container: {
+      width: "100vw",
+      minHeight: "100vh",
+      background: "#fff", 
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      boxSizing: "border-box",
+      padding: "0",
+    },
+    centerBox: {
+      background: "#fff",
+      margin: "0 auto",
+      borderRadius: "0px",
+      width: "80vw",
+      maxWidth: "900px",
+      padding: "32px 0",
+      boxSizing: "border-box",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+    },
+    header: {
+      marginBottom: "8px",
+    },
+    title: {
+      fontSize: "1.75rem",
+      fontWeight: 800,
+      margin: 0,
+      fontFamily: "Montserrat, Arial, sans-serif",
       textAlign: "center",
-      backgroundColor: "#f8f9fa",
-      padding: "3rem 0",
-    },
-    blogHeader: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      textAlign: "center",
-      marginBottom: "1.5rem",
-    },
-    blogTitle: {
-      fontSize: "2rem",
-      fontWeight: "700",
-      marginBottom: "0.3rem",
-    },
-    blogSubtitle: {
-      fontSize: "1.1rem",
-      marginTop: "0.3rem",
-      marginBottom: "1.5rem",
-      color: "#6c757d",
+      color: "#000", 
     },
     underline: {
       width: "50px",
       height: "3px",
       backgroundColor: "#f1c40f",
       borderRadius: "3px",
-      margin: "8px auto",
+      margin: "6px auto 4px auto", 
     },
-    blogCardsWrapper: {
+    subtitle: {
+      fontSize: "1rem",
+      color: "#222",
+      fontWeight: 400,
+      margin: "8px 0 32px 0", 
+      textAlign: "center",
+      fontFamily: "Montserrat, Arial, sans-serif",
+    },
+    cardsRow: {
       display: "flex",
+      gap: "1.5rem",
       justifyContent: "center",
-      alignItems: "flex-start",
-      gap: "2.5rem",
+      alignItems: "stretch",
+      width: "100%",
       flexWrap: "nowrap",
-      maxWidth: "100%",
-      margin: "0 auto",
-      padding: "0 20rem",
-      boxSizing: "border-box",
-      flexDirection: "row",
-      flexGrow: 1,
+      margin: 0,
     },
-    blogCard: {
-      border: "1px solid #ddd",
-      borderRadius: "10px",
-      padding: "20px",
-      flex: "0 1 420px",
+    card: {
+      background: "#fff",
+      border: "1.5px solid #505050",
+      borderRadius: "14px",
+      width: "350px",
+      boxSizing: "border-box",
       display: "flex",
       flexDirection: "column",
-      textAlign: "left",
-      backgroundColor: "#fff",
-      transition: "transform 0.2s ease",
+      padding: "20px",
+      justifyContent: "space-between",
+      transition: "box-shadow 0.25s, transform 0.25s",
+      boxShadow: "none",
     },
-    blogBadge: {
-      backgroundColor: "#f1c40f",
+    cardHovered: {
+      boxShadow: "0 6px 18px rgba(0,0,0,0.10)",
+      transform: "translateY(-3px)",
+    },
+    cardHeaderRow: {
+      display: "flex",
+      alignItems: "center",
+      marginBottom: "8px",
+      gap: "6px",
+    },
+    cardDate: {
+      color: "#505050",
+      fontSize: "0.93rem",
+      fontWeight: 600,
+      fontFamily: "Montserrat, Arial, sans-serif",
+    },
+    cardBadge: {
+      fontWeight: 700,
+      fontSize: "0.70rem",
+      background: "#f1c40f",
       color: "#000",
-      fontWeight: 500,
-      padding: "5px 12px",
-      borderRadius: "20px",
-      fontSize: "0.8rem",
-      marginLeft: "0.5rem",
+      borderRadius: "999px",
+      padding: "3px 12px",
+      marginLeft: "6px",
+      fontFamily: "Montserrat, Arial, sans-serif",
     },
-    blogCardTitle: {
-      marginTop: "10px",
-      marginBottom: "10px",
-    },
-    blogText: {
+    cardTitle: {
       fontSize: "0.95rem",
-      marginBottom: "12px",
+      fontWeight: 800,
+      margin: "0 0 8px 0",
+      color: "#0a0a0a",
+      fontFamily: "Montserrat, Arial, sans-serif",
+    },
+    cardText: {
+      fontSize: "0.85rem",
+      color: "#222",
+      fontWeight: 500,
+      lineHeight: 1.5,
+      marginBottom: "13px",
+      fontFamily: "Montserrat, Arial, sans-serif",
     },
     readMore: {
       color: "#f1c40f",
-      fontWeight: 500,
+      fontWeight: 700,
+      fontSize: "0.94rem",
       textDecoration: "none",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "8px",
+      fontFamily: "Montserrat, Arial, sans-serif",
+      marginTop: "2px",
       cursor: "pointer",
+      letterSpacing: "0.02em",
     },
     arrow: {
-      fontSize: "1rem",
-      marginLeft: "5px",
-    },
-    dateText: {
-      color: "#6c757d",
-      fontSize: "0.9rem",
+      fontWeight: 800,
+      fontSize: "1.15em",
+      display: "inline-block",
     },
   };
 
-  return (
-    <div style={styles.blogSection}>
-      {/* Blog Header */}
-      <div style={styles.blogHeader}>
-        <h2 style={styles.blogTitle}>Blog</h2>
-        <div style={styles.underline}></div>
-        <p style={styles.blogSubtitle}>Latest insights and developments</p>
-      </div>
+  
+  const [hovered, setHovered] = React.useState(-1);
 
-      {/* Blog Cards */}
-      <div style={styles.blogCardsWrapper}>
-        {/* Card 1 */}
-        <div
-          style={styles.blogCard}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-5px)")}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
-        >
-          <div>
-            <div style={{ display: "flex", alignItems: "center", marginBottom: "0.8rem" }}>
-              <small style={styles.dateText}>Dec 2024</small>
-              <span style={styles.blogBadge}>AI Research</span>
+  return (
+    <div style={styles.container}>
+      <div style={styles.centerBox}>
+        <div style={styles.header}>
+          <div style={styles.title}>Blog</div>
+          <div style={styles.underline}></div>
+        </div>
+        <div style={styles.subtitle}>Latest insights and developments</div>
+        <div style={styles.cardsRow}>
+          {/* CARD 1 */}
+          <div
+            style={{
+              ...styles.card,
+              ...(hovered === 0 ? styles.cardHovered : {}),
+            }}
+            onMouseEnter={() => setHovered(0)}
+            onMouseLeave={() => setHovered(-1)}
+          >
+            <div>
+              <div style={styles.cardHeaderRow}>
+                <span style={styles.cardDate}>Dec 2024</span>
+                <span style={styles.cardBadge}>AI Research</span>
+              </div>
+              <div style={styles.cardTitle}>AI Vision Demo</div>
+              <div style={styles.cardText}>
+                Exploring the next frontier in visual AI and its impact on society...
+              </div>
             </div>
-            <h5 style={styles.blogCardTitle}>AI Vision Demo</h5>
-            <p style={styles.blogText}>
-              Exploring the next frontier in visual AI and its impact on society...
-            </p>
             <a href="#" style={styles.readMore}>
               Read more <span style={styles.arrow}>→</span>
             </a>
           </div>
-        </div>
-
-        {/* Card 2 */}
-        <div
-          style={styles.blogCard}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-5px)")}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
-        >
-          <div>
-            <div style={{ display: "flex", alignItems: "center", marginBottom: "0.8rem" }}>
-              <small style={styles.dateText}>Dec 2024</small>
-              <span style={styles.blogBadge}>Technology</span>
+          {/* CARD 2 */}
+          <div
+            style={{
+              ...styles.card,
+              ...(hovered === 1 ? styles.cardHovered : {}),
+            }}
+            onMouseEnter={() => setHovered(1)}
+            onMouseLeave={() => setHovered(-1)}
+          >
+            <div>
+              <div style={styles.cardHeaderRow}>
+                <span style={styles.cardDate}>Dec 2024</span>
+                <span style={styles.cardBadge}>Technology</span>
+              </div>
+              <div style={styles.cardTitle}>Machine Learning breakthroughs</div>
+              <div style={styles.cardText}>
+                Recent advancements in neural network architectures and its applications...
+              </div>
             </div>
-            <h5 style={styles.blogCardTitle}>Machine Learning breakthroughs</h5>
-            <p style={styles.blogText}>
-              Recent advancements in neural network architectures and its applications...
-            </p>
             <a href="#" style={styles.readMore}>
               Read more <span style={styles.arrow}>→</span>
             </a>
