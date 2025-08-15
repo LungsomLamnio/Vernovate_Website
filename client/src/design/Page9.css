@@ -42,23 +42,30 @@
 .highlight-ver::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -6px;
   left: 0;
   width: 0%;
   height: 4px;
   background-color: #ffc107;
   border-radius: 2px;
-  animation: underline-grow 1.2s ease-out forwards;
+  animation: underline-grow 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
 @keyframes underline-grow {
-  from {
+  0% {
     width: 0%;
+    transform: translateX(0);
   }
-  to {
-    width: 120%;
+  80% {
+    width: 100%;
+    transform: translateX(0);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(0);
   }
 }
+
 
 
 .team-photo {
@@ -90,4 +97,15 @@
 .section {
   background-color: #f9f9f9;
   padding: 4rem 0;
+}
+
+.card {
+  border: 2px solid transparent; 
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #ffc107; 
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12);
 }
