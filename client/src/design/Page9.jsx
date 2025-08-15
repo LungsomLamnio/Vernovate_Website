@@ -1,6 +1,5 @@
 import React from "react";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./Page9.css"; 
+import "./Page9.css";
 
 const Page9 = () => {
   return (
@@ -22,8 +21,9 @@ const Page9 = () => {
               </div>
               <h5>Our Journey</h5>
               <p className="text-muted">
-                Vernovate began with a vision to harness AI and Computer Vision for smarter, safer cities.
-                Our story is one of innovation, collaboration and a relentless drive to solve real-world
+                Vernovate began with a vision to harness AI and Computer Vision
+                for smarter, safer cities. Our story is one of innovation,
+                collaboration and a relentless drive to solve real-world
                 problems in urban mobility.
               </p>
             </div>
@@ -37,27 +37,39 @@ const Page9 = () => {
               </div>
               <h5>Meet the Team</h5>
               <p className="text-muted">
-                Our diverse team of AI engineers, researchers, and city planners is dedicated to building
-                next-gen traffic solutions.
+                Our diverse team of AI engineers, researchers, and city planners
+                is dedicated to building next-gen traffic solutions.
               </p>
               <div className="d-flex justify-content-center gap-3 mt-3 flex-wrap">
                 <div className="team-member">
                   <div className="team-photo">
                     <i className="fas fa-user"></i>
                   </div>
-                  <small>NAME<br />Founder & AI Lead</small>
+                  <small>
+                    NAME
+                    <br />
+                    Founder & AI Lead
+                  </small>
                 </div>
                 <div className="team-member">
                   <div className="team-photo">
                     <i className="fas fa-user"></i>
                   </div>
-                  <small>NAME<br />Vision & Leadership</small>
+                  <small>
+                    NAME
+                    <br />
+                    Vision & Leadership
+                  </small>
                 </div>
                 <div className="team-member">
                   <div className="team-photo">
                     <i className="fas fa-user"></i>
                   </div>
-                  <small>NAME<br />Urban Mobility Specialist</small>
+                  <small>
+                    NAME
+                    <br />
+                    Urban Mobility Specialist
+                  </small>
                 </div>
               </div>
             </div>
@@ -71,9 +83,10 @@ const Page9 = () => {
               </div>
               <h5>Our Story</h5>
               <p className="text-muted">
-                From research labs to city streets, Vernovate is committed to bridging the gap between
-                technology and real-world impact. We believe in a future where AI empowers communities
-                and transforms urban life.
+                From research labs to city streets, Vernovate is committed to
+                bridging the gap between technology and real-world impact. We
+                believe in a future where AI empowers communities and transforms
+                urban life.
               </p>
             </div>
           </div>
